@@ -1,0 +1,31 @@
+ XOR Gate Using Basic Gates
+Design a XOR gate (xor_gate) using basic gates (and_gate, or_gate, not_gate).
+
+Requirements
+
+Module name: xor_gate
+Inputs: a, b (1-bit each)
+Output: y (1-bit)
+code:
+module and_gate(input a, b, output y);
+    assign y = a & b;
+endmodule
+
+module or_gate(input a, b, output y);
+    assign y = a|b;
+
+endmodule
+
+module not_gate(input a, output y);
+    assign y = ~a;
+
+endmodule
+
+module xor_gate (
+    input  a, b,
+    output y
+);
+
+    assign y = a^b;
+
+endmodule
