@@ -1,0 +1,35 @@
+Vector Bitwise Operators
+Design a combinational module bitwise_ops_demo that demonstrates the use of vector bitwise operators.
+
+Requirements
+Module name: bitwise_ops_demo
+Inputs:
+A[3:0] (4-bit)
+B[3:0] (4-bit)
+Outputs:
+AND_OUT[3:0] = bitwise AND of A and B
+OR_OUT[3:0] = bitwise OR of A and B
+XOR_OUT[3:0] = bitwise XOR of A and B
+XNOR_OUT[3:0] = bitwise XNOR of A and B
+Expected Behavior (example)
+If A = 4'b1010 and B = 4'b1100:
+
+Operation	Result
+AND	1000
+OR	1110
+XOR	0110
+XNOR	1001
+code:-
+module bitwise_ops_demo(
+input [3:0]A,
+input [3:0]B,
+output [3:0]AND_OUT,
+output [3:0]OR_OUT,
+output [3:0]XOR_OUT,
+output [3:0]XNOR_OUT
+);
+assign AND_OUT=(A&B);
+assign OR_OUT=(A|B);
+assign XOR_OUT=(A^B);
+assign XNOR_OUT=~(A^B);
+endmodule
