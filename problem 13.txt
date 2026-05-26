@@ -1,0 +1,27 @@
+ Logical Shifter
+Design an 8-bit logical shifter that outputs both the left-shifted and right-shifted versions of its input by a variable amount.
+
+Requirements
+
+Module name: shift8
+Inputs:
+A[7:0] — data to shift
+shamt[2:0] — shift amount (0–7)
+Outputs:
+SHL[7:0] — logical left shift, A << shamt
+SHR[7:0] — logical right shift, A >> shamt
+Notes
+
+Use logical shifts only (<<, >>).
+Vacated bits must be filled with 0; bits shifted out are discarded.
+If shamt = 0, then SHL = SHR = A.
+code:
+module shift8 (
+    input [7:0]A,
+    input [2:0]shamt,
+    output [7:0]SHL,
+    output [7:0]SHR
+);
+assign SHL =A<<shamt;
+assign SHR =A>>shamt;
+endmodule
