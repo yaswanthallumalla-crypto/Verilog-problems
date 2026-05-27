@@ -1,0 +1,29 @@
+Battery LED Bar
+Design a Verilog module that drives an 8-LED battery bar based on a level input. The bar should light LEDs from LSB to MSB (right to left) as the level increases.
+
+Requirements
+
+Module name: battery_led_bar
+Inputs:
+level[3:0] — battery level from 0 to 8 (inclusive)
+Outputs:
+led_bar[7:0] — LED bar where the lowest level bits are 1, higher bits are 0
+ coder:
+/*Write your code here*/
+module battery_led_bar(input [3:0] level, output reg [7:0] led_bar);
+    always@(*)
+    begin
+        //reg led_bar = 8'd0;
+        case(level)
+            4'd0: led_bar = 8'd0;
+            4'd1: led_bar = 8'd1;
+            4'd2: led_bar = 8'd3; 
+            4'd3: led_bar = 8'd7;
+            4'd4: led_bar = 8'd15;
+            4'd5: led_bar = 8'd31;
+            4'd6: led_bar = 8'd63;
+            4'd7: led_bar = 8'd127;
+            default:led_bar = 8'd255;
+        endcase
+    end
+endmodule
