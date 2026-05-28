@@ -1,0 +1,16 @@
+ Binary to Gray Code Converter
+Design a Binary to Gray Code Converter that converts a 4-bit binary input into its 4-bit Gray code equivalent.
+
+Requirements
+Module name: bin2gray4
+Inputs:
+bin_in[3:0]
+Outputs:
+gray_out[3:0]
+code:
+module bin2gray4(
+    input [3:0]bin_in,
+    output [3:0]gray_out
+);
+assign gray_out = bin_in ^(bin_in>>1);
+endmodule
