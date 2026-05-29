@@ -1,0 +1,23 @@
+ LED Toggle on Rising Edge
+Design a circuit where a LED toggles on every rising edge of the clock.
+
+Requirements
+
+Module: led_toggle
+Inputs: clk
+Outputs:
+led — toggles state on every posedge clk
+Initialize led to 0 at time 0.
+code:
+module led_toggle (
+    input  clk,
+    output reg led
+);
+    initial led = 1'b0;
+    always@(posedge clk)
+    begin
+        led <= ~ led;
+    end
+    // TODO: write a sequential always block on posedge clk - `always @(posedge clk)`
+    // that toggles led each clock cycle
+endmodule
